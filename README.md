@@ -13,3 +13,8 @@ cd studentFee
 To run this command to install packages: npm run install-all
 To run the App: npm start
 
+
+---Project Details--
+my web app display the student fee transactions history stored in api
+and based on the studentId it will fetch the student details.
+

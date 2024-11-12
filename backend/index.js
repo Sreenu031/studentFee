@@ -2,11 +2,19 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // You can change the port as needed
+const PORT =  5000; // You can change the port as needed
 
 app.use(cors()); // Enable CORS for all routes
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Handle all requests and serve the React index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 app.get('/api/fee-transactions', async (req, res) => {
     try {

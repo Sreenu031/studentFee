@@ -23,7 +23,7 @@ app.get('/api/fee-transactions', async (req, res) => {
         res.json(data); // Send the data back to the client
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Error fetching data' });
+        res.status(500).json({ message: 'Error fetching Datta' });
     }
 });
 
